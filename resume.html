@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resume Builder | PlaceReady</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/print.css">
+  <link rel="manifest" href="manifest.json">
+  <script src="js/app.js" defer></script>
+  <script src="js/resume.js" defer></script>
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">P</span>
+      <span>PlaceReady<small>Placement companion</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a class="nav-link" href="index.html">▦ <span>Dashboard</span></a>
+      <a class="nav-link" href="profile.html">◉ <span>My Profile</span></a>
+      <a class="nav-link active" href="resume.html">▤ <span>Resume Builder</span></a>
+      <a class="nav-link" href="interview.html">◎ <span>Interview Practice</span></a>
+      <a class="nav-link" href="aptitude.html">◷ <span>Aptitude Practice</span></a>
+      <a class="nav-link" href="tracker.html">✓ <span>Preparation Tracker</span></a>
+      <a class="nav-link" href="settings.html">⚙ <span>Settings / About</span></a>
+    </nav>
+    <div class="sidebar-note">
+      <span class="note-icon"></span>
+      <strong>Your next opportunity starts here.</strong>
+      <p>Small steps today. Better interviews tomorrow.</p>
+    </div>
+  </aside>
+
+  <main class="main-area">
+    <header class="topbar">
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+      <div>
+        <p class="eyebrow">BUILD YOUR STORY</p>
+        <h1>Resume Builder</h1>
+      </div>
+      <div class="top-profile">
+        <span class="avatar" id="avatarInitial">S</span>
+        <span>
+          <strong id="topStudentName">Student</strong>
+          <small>Placement candidate</small>
+        </span>
+      </div>
+    </header>
+
+    <section class="page-intro">
+      <p class="eyebrow">MAKE A STRONG FIRST IMPRESSION</p>
+      <h2>Your experience, clearly presented</h2>
+      <p>Your saved profile is loaded automatically. Add your education and projects, then preview or print your resume.</p>
+    </section>
+
+    <div id="resumeMessage" role="status" aria-live="polite"></div>
+
+    <div class="resume-layout">
+      <section class="panel resume-form-panel">
+        <h2>Resume details</h2>
+        <p class="muted">Complete the sections relevant to you.</p>
+
+        <form id="resumeForm">
+          <h3>Personal information</h3>
+
+          <label for="resumeName">Full name</label>
+          <input id="resumeName" name="resumeName" required maxlength="100">
+
+          <label for="resumeEmail">Email address</label>
+          <input id="resumeEmail" name="resumeEmail" type="email" maxlength="150">
+
+          <label for="resumePhone">Phone number</label>
+          <input id="resumePhone" name="resumePhone" type="tel" maxlength="30">
+
+          <label for="resumeLocation">Location</label>
+          <input id="resumeLocation" name="resumeLocation" maxlength="100" placeholder="City, State">
+
+          <label for="resumeRole">Career objective / target role</label>
+          <textarea id="resumeRole" name="resumeRole" rows="3" maxlength="1000"
+            placeholder="Write a short professional objective"></textarea>
+
+          <label for="resumeSkills">Technical and soft skills</label>
+          <textarea id="resumeSkills" name="resumeSkills" rows="3" maxlength="1000"
+            placeholder="C, Java, HTML, CSS, communication..."></textarea>
+
+          <h3>Education</h3>
+
+          <label for="resumeDegree">Degree / course</label>
+          <input id="resumeDegree" name="resumeDegree" maxlength="150" placeholder="MCA">
+
+          <label for="resumeCollege">College / university</label>
+          <input id="resumeCollege" name="resumeCollege" maxlength="200">
+
+          <label for="resumeYear">Expected graduation year</label>
+          <input id="resumeYear" name="resumeYear" maxlength="20" placeholder="2027">
+
+          <label for="resumeEducationDetails">Additional education details</label>
+          <textarea id="resumeEducationDetails" name="resumeEducationDetails"
+            rows="2" maxlength="1000" placeholder="CGPA, previous degree, relevant coursework"></textarea>
+
+          <h3>Projects</h3>
+
+          <label for="resumeProjects">Project name and description</label>
+          <textarea id="resumeProjects" name="resumeProjects" rows="5" maxlength="3000"
+            placeholder="PlaceReady — A student placement preparation PWA built with HTML, CSS and JavaScript."></textarea>
+
+          <h3>Certifications and achievements</h3>
+
+          <label for="resumeCertifications">Certifications / achievements</label>
+          <textarea id="resumeCertifications" name="resumeCertifications"
+            rows="3" maxlength="2000" placeholder="Add relevant certifications or achievements"></textarea>
+
+          <label for="resumeExperience">Internship / experience</label>
+          <textarea id="resumeExperience" name="resumeExperience"
+            rows="3" maxlength="2000" placeholder="Add experience, or leave blank if you are a fresher"></textarea>
+
+          <div class="resume-actions no-print">
+            <button class="button" type="submit">Save resume</button>
+            <button class="button button-secondary" type="button" id="refreshPreview">
+              Update preview
+            </button>
+            <button class="button button-secondary" type="button" id="printResume">
+              Print / Save PDF
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel preview-panel">
+        <div class="preview-heading no-print">
+          <div>
+            <p class="eyebrow">LIVE PREVIEW</p>
+            <h2>Your resume</h2>
+          </div>
+          <span class="preview-label">A4-friendly</span>
+        </div>
+
+        <article class="resume-paper" id="resumePreview">
+          <header class="resume-paper-header">
+            <h1 id="previewName">Your Name</h1>
+            <p id="previewContact">Your email · Your phone · Your location</p>
+          </header>
+
+          <section class="resume-section" id="objectiveSection">
+            <h2>Career Objective</h2>
+            <p id="previewObjective">Your career objective will appear here.</p>
+          </section>
+
+          <section class="resume-section" id="skillsSection">
+            <h2>Skills</h2>
+            <p id="previewSkills">Add your skills in the form.</p>
+          </section>
+
+          <section class="resume-section" id="educationSection">
+            <h2>Education</h2>
+            <p id="previewEducation">Your education details will appear here.</p>
+          </section>
+
+          <section class="resume-section" id="projectsSection">
+            <h2>Projects</h2>
+            <p id="previewProjects">Add your projects in the form.</p>
+          </section>
+
+          <section class="resume-section" id="certificationsSection">
+            <h2>Certifications & Achievements</h2>
+            <p id="previewCertifications">Add certifications or achievements.</p>
+          </section>
+
+          <section class="resume-section" id="experienceSection">
+            <h2>Experience</h2>
+            <p id="previewExperience">Add internship or experience details.</p>
+          </section>
+        </article>
+      </section>
+    </div>
+
+    <footer class="footer">
+      PlaceReady <span>•</span> Your personal placement preparation space
+    </footer>
+  </main>
+</div>
+</body>
+</html>

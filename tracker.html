@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Preparation Tracker | PlaceReady</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="manifest" href="manifest.json">
+  <script src="js/app.js" defer></script>
+  <script src="js/tracker.js" defer></script>
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">P</span>
+      <span>PlaceReady<small>Placement companion</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a class="nav-link" href="index.html">▦ <span>Dashboard</span></a>
+      <a class="nav-link" href="profile.html">◉ <span>My Profile</span></a>
+      <a class="nav-link" href="resume.html">▤ <span>Resume Builder</span></a>
+      <a class="nav-link" href="interview.html">◎ <span>Interview Practice</span></a>
+      <a class="nav-link" href="aptitude.html">◷ <span>Aptitude Practice</span></a>
+      <a class="nav-link active" href="tracker.html">✓ <span>Preparation Tracker</span></a>
+      <a class="nav-link" href="settings.html">⚙ <span>Settings / About</span></a>
+    </nav>
+    <div class="sidebar-note">
+      <span class="note-icon"></span>
+      <strong>Your next opportunity starts here.</strong>
+      <p>Small steps today. Better interviews tomorrow.</p>
+    </div>
+  </aside>
+
+  <main class="main-area">
+    <header class="topbar">
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+      <div>
+        <p class="eyebrow">ONE STEP AT A TIME</p>
+        <h1>Preparation Tracker</h1>
+      </div>
+      <div class="top-profile">
+        <span class="avatar" id="avatarInitial">S</span>
+        <span><strong id="topStudentName">Student</strong><small>Placement candidate</small></span>
+      </div>
+    </header>
+
+    <section class="page-intro">
+      <p class="eyebrow">STAY CONSISTENT</p>
+      <h2>Make your preparation visible</h2>
+      <p>Add tasks and track your placement preparation progress.</p>
+    </section>
+
+    <section class="panel">
+      <form id="taskForm">
+        <label for="taskInput">New preparation task</label>
+        <input id="taskInput" type="text" placeholder="e.g. Revise DBMS" maxlength="100" required>
+        <button class="button" type="submit">Add Task</button>
+      </form>
+
+      <h3>My Progress</h3>
+      <p id="taskCount">0 tasks completed out of 0</p>
+      <progress id="progressBar" value="0" max="100"></progress>
+      <p id="progressText">0% completed</p>
+
+      <h3>My Tasks</h3>
+      <ul id="taskList"></ul>
+      <p id="emptyMessage">No tasks yet. Add your first task above!</p>
+      <button class="button button-secondary" id="clearTasks" type="button">Clear All Tasks</button>
+    </section>
+
+    <footer class="footer">
+      PlaceReady <span>•</span> Your personal placement preparation space
+    </footer>
+  </main>
+</div>
+</body>
+</html>

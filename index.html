@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#243b80">
+  <title>PlaceReady | Dashboard</title>
+  <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/responsive.css">
+  <link rel="manifest" href="manifest.json">
+  <script src="js/app.js" defer></script>
+  <link rel="icon" type="image/png" href="./assets/icons/placeready-192.png">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="index.html"><span class="brand-mark">P</span><span>PlaceReady<small>Placement companion</small></span></a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a class="nav-link active" href="index.html">▦ <span>Dashboard</span></a>
+      <a class="nav-link" href="profile.html">◉ <span>My Profile</span></a>
+      <a class="nav-link" href="resume.html">▤ <span>Resume Builder</span></a>
+      <a class="nav-link" href="interview.html">◎ <span>Interview Practice</span></a>
+      <a class="nav-link" href="aptitude.html">◷ <span>Aptitude Practice</span></a>
+      <a class="nav-link" href="tracker.html">✓ <span>Preparation Tracker</span></a>
+      <a class="nav-link" href="settings.html">⚙ <span>Settings / About</span></a>
+    </nav>
+    </aside>
+  <main class="main-area">
+    <header class="topbar"><button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button><div><p class="eyebrow">STUDENT WORKSPACE</p><h1>Dashboard</h1></div><div class="top-profile"><span class="avatar" id="avatarInitial">S</span><span><strong id="topStudentName">Student</strong><small>Placement candidate</small></span></div></header>
+    <section class="welcome-banner">
+      <div><p class="eyebrow light">YOUR PLACEMENT JOURNEY</p><h2 id="welcomeTitle">Welcome back, Student! 👋</h2><p>Build your confidence one practice session at a time.</p><a class="button button-light" href="tracker.html">Continue preparation <span>→</span></a></div>
+      <div class="banner-art" aria-hidden="true"><div class="art-circle">✦</div><div class="art-card"><span>READY</span><strong>Prepare.<br>Practice.<br>Progress.</strong><div class="art-line"></div></div></div>
+    </section>
+    <section class="section-heading"><div><p class="eyebrow">YOUR OVERVIEW</p><h2>Preparation at a glance</h2></div><span class="muted">Your progress updates as you work</span></section>
+    <section class="stats-grid">
+      <article class="stat-card"><div class="stat-icon purple">↗</div><p>Overall progress</p><div class="stat-value"><span id="overallProgress">0%</span><small>of your checklist</small></div><div class="mini-progress"><span id="overallBar" style="width:0%"></span></div></article>
+      <article class="stat-card"><div class="stat-icon green">✓</div><p>Tasks completed</p><div class="stat-value"><span id="tasksCompleted">0</span><small id="tasksTotal">of 8 tasks</small></div><a class="text-link" href="tracker.html">View checklist →</a></article>
+      <article class="stat-card"><div class="stat-icon orange">◎</div><p>Aptitude questions</p><div class="stat-value"><span id="questionsAttempted">0</span><small>attempted</small></div><a class="text-link" href="aptitude.html">Practice now →</a></article>
+      <article class="stat-card"><div class="stat-icon blue">▤</div><p>Latest test score</p><div class="stat-value"><span id="latestScore">—</span><small id="testAttempts">No tests yet</small></div><a class="text-link" href="aptitude.html">Take a test →</a></article>
+    </section>
+    <section class="dashboard-grid">
+      <article class="panel"><div class="panel-heading"><div><p class="eyebrow">GET STARTED</p><h2>Your preparation toolkit</h2></div><span class="panel-symbol">✦</span></div>
+        <div class="toolkit-grid">
+          <a class="tool-card" href="resume.html"><span class="tool-icon purple">▤</span><strong>Resume Builder</strong><p>Create a clear, job-ready resume.</p><span class="tool-arrow">↗</span></a>
+          <a class="tool-card" href="interview.html"><span class="tool-icon blue">◎</span><strong>Interview Practice</strong><p>Review common HR and technical questions.</p><span class="tool-arrow">↗</span></a>
+          <a class="tool-card" href="aptitude.html"><span class="tool-icon orange">◷</span><strong>Aptitude Practice</strong><p>Sharpen your reasoning and speed.</p><span class="tool-arrow">↗</span></a>
+          <a class="tool-card" href="tracker.html"><span class="tool-icon green">✓</span><strong>Preparation Tracker</strong><p>Turn your goals into small actions.</p><span class="tool-arrow">↗</span></a>
+        </div>
+      </article>
+      <article class="panel checklist-panel"><div class="panel-heading"><div><p class="eyebrow">KEEP MOVING</p><h2>Preparation checklist</h2></div><a class="text-link" href="tracker.html">See all →</a></div><div id="dashboardTasks" class="dashboard-tasks"><p class="muted">Your preparation checklist will appear here.</p></div></article>
+    </section>
+    <footer class="footer">PlaceReady <span>•</span> Your personal placement preparation space</footer>
+  </main>
+</div>
+</body></html>

@@ -1,0 +1,42 @@
+
+{
+  "id": "./index.html",
+  "name": "PlaceReady - Student Placement Preparation",
+  "short_name": "PlaceReady",
+  "description": "Prepare for placements with interview practice, aptitude tests, resume building and progress tracking.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f6fb",
+  "theme_color": "#263f8b",
+  "icons": [
+    {
+      "src": "./assets/icons/placeready-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/icons/placeready-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+
+"screenshots": [
+  {
+    "src": "./screenshots/desktop.png",
+    "sizes": "1365x768",
+    "type": "image/png",
+    "form_factor": "wide",
+    "label": "PlaceReady desktop dashboard"
+  },
+  {
+    "src": "./screenshots/mobile.png",
+    "sizes": "390x844",
+    "type": "image/png",
+    "label": "PlaceReady mobile dashboard"
+  }
+]
+}

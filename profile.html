@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Profile | PlaceReady</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="manifest" href="manifest.json">
+    <script src="js/app.js" defer></script>
+</head>
+
+<body>
+    <div class="app-shell">
+        <aside class="sidebar" id="sidebar"><a class="brand" href="index.html"><span
+                    class="brand-mark">P</span><span>PlaceReady<small>Placement companion</small></span></a>
+            <nav class="nav-links" aria-label="Main navigation"><a class="nav-link" href="index.html">▦
+                    <span>Dashboard</span></a><a class="nav-link active" href="profile.html">◉ <span>My
+                        Profile</span></a><a class="nav-link" href="resume.html">▤ <span>Resume Builder</span></a><a
+                    class="nav-link" href="interview.html">◎ <span>Interview Practice</span></a><a class="nav-link"
+                    href="aptitude.html">◷ <span>Aptitude Practice</span></a><a class="nav-link" href="tracker.html">✓
+                    <span>Preparation Tracker</span></a><a class="nav-link" href="settings.html">⚙ <span>Settings /
+                        About</span></a></nav>
+            <div class="sidebar-note"><span class="note-icon"></span><strong>Your next opportunity starts
+                    here.</strong>
+                <p>Small steps today. Better interviews tomorrow.</p>
+            </div>
+        </aside>
+        <main class="main-area">
+            <header class="topbar"><button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+                <div>
+                    <p class="eyebrow">STUDENT WORKSPACE</p>
+                    <h1>My Profile</h1>
+                </div>
+                <div class="top-profile"><span class="avatar" id="avatarInitial">S</span><span><strong
+                            id="topStudentName">Student</strong><small>Placement candidate</small></span></div>
+            </header>
+            <section class="page-intro">
+                <p class="eyebrow">YOUR DETAILS</p>
+                <h2>Tell us about yourself</h2>
+                <p>Keep your student profile ready for your placement preparation.</p>
+            </section>
+            <section class="panel form-panel">
+                <div class="panel-heading">
+                    <div>
+                        <h2>Student information</h2>
+                        <p class="muted">Fields marked with * are required.</p>
+                    </div>
+                </div>
+                <form id="profileForm" class="form-grid"><label>Full name *<input name="fullName" required
+                            autocomplete="name" placeholder="e.g. Priya Sharma"></label><label>Email address *<input
+                            name="email" type="email" required autocomplete="email"
+                            placeholder="you@example.com"></label><label>College name<input name="college"
+                            placeholder="Your college or university"></label><label>Degree / course<input name="course"
+                            placeholder="e.g. MCA"></label><label>Current semester<input name="semester"
+                            placeholder="e.g. Semester 2"></label><label>Target role<input name="targetRole"
+                            placeholder="e.g. Frontend Developer"></label><label class="full-width">Technical and soft
+                        skills<textarea name="skills" rows="3"
+                            placeholder="e.g. HTML, CSS, JavaScript, communication"></textarea></label><label
+                        class="full-width">Career objective<textarea name="objective" rows="4"
+                            placeholder="Briefly describe your career goal"></textarea></label>
+                    <div class="form-actions full-width"><button class="button" type="submit">Save
+                            profile</button><button class="button button-secondary" type="reset">Clear fields</button>
+                    </div>
+                    <p id="profileMessage" class="form-message full-width" role="status"></p>
+                </form>
+            </section>
+            <footer class="footer">PlaceReady <span>•</span> Your personal placement preparation space</footer>
+        </main>
+    </div>
+</body>
+
+</html>

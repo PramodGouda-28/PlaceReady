@@ -24,3 +24,5 @@ Opening with Live Server is recommended; later stages will use service workers, 
 - Stage 5: Testing and practical demonstration notes.
 
 This is a frontend-only educational project. LocalStorage data remains in the current browser and is not synchronized to other devices.
+
+PlaceReady is deployed using GitHub Pages

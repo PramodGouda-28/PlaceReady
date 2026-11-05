@@ -54,4 +54,34 @@ self.addEventListener("activate", event => {
   );
 
   self.clients.claim();
+}); 
+
+
+/* Handle incoming push notifications */
+self.addEventListener("push", event => {
+  let data = {
+    title: "PlaceReady",
+    body: "You have a new notification!"
+  };
+
+  if (event.data) {
+    data = event.data.json();
+  }
+
+  event.waitUntil(
+    self.registration.showNotification(data.title, {
+      body: data.body,
+      icon: "./assets/icons/placeready-192.png",
+      badge: "./assets/icons/placeready-192.png"
+    })
+  );
+});
+
+/* Open PlaceReady when notification is clicked */
+self.addEventListener("notificationclick", event => {
+  event.notification.close();
+
+  event.waitUntil(
+    clients.openWindow("./index.html")
+  );
 });

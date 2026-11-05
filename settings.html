@@ -105,10 +105,18 @@ notificationButton.addEventListener("click", async () => {
 
         const keyData = await response.json();
 
-        const subscription = await registration.pushManager.subscribe({
-            userVisibleOnly: true,
-            applicationServerKey: convertKey(keyData.publicKey)
-        });
+        // Remove any old subscription created using previous VAPID keys
+const oldSubscription = await registration.pushManager.getSubscription();
+
+if (oldSubscription) {
+    await oldSubscription.unsubscribe();
+}
+
+// Create a fresh subscription using the current Render public key
+const subscription = await registration.pushManager.subscribe({
+    userVisibleOnly: true,
+    applicationServerKey: convertKey(keyData.publicKey)
+});
 
         const result = await fetch("https://placeready-backend.onrender.com/api/send-test", {
             method: "POST",
